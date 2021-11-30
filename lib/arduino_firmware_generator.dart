@@ -3,7 +3,7 @@ part of 'arduino_code_builder.dart';
 class ArduinoFirmwareGenerator {
   static String serviceUUID = "9a8ca9ef-e43f-4157-9fee-c37a3d7dc12d";
   static String manufacturer = "Manufactura";
-  static String deviceName = "Manufactura";
+  static String deviceName = "Manufactura model 1";
 
   static final String _template = '''
 #include <BLEDevice.h>
