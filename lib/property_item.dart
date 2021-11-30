@@ -1,9 +1,16 @@
 import 'package:uuid/uuid.dart';
 
 class PropertyItem {
+  /// Семантичное название свойства
   final String name;
+
+  /// [type] Тип может быть bool, int, String
   final Type type;
+
+  /// [writable] Можно ли внешним устройствам записывать значение характеристики
   final bool writable;
+
+  /// [notifiable] Можно ли подписываться на изменение значения характеристики
   final bool notifiable;
   late String uuid;
   PropertyItem(this.name, this.type,
