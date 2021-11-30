@@ -26,8 +26,12 @@ var properties = [
   PropertyItem('ttubebattery', int, notifiable: true, writable: true),
 ];
 
-void main() {
+void main(List<String> args) {
+  File outputFile = File(args.isNotEmpty ? args.first : "./out/firmware.c");
   var generatedCode =
       ArduinoFirmwareGenerator(ArduinoCodeBuilder(properties)).build();
-  File('./ble_generated.c').writeAsStringSync(generatedCode);
+  if (!outputFile.existsSync()) {
+    outputFile.createSync(recursive: true);
+  }
+  outputFile.writeAsStringSync(generatedCode);
 }
